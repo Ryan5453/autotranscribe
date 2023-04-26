@@ -1,0 +1,9 @@
+FROM python:3.10
+
+COPY requirements.txt /autotranscribe/requirements.txt
+RUN pip install -r /autotranscribe/requirements.txt
+
+COPY ./worker /autotranscribe/worker
+WORKDIR /autotranscribe
+
+ENTRYPOINT celery -A worker.worker worker

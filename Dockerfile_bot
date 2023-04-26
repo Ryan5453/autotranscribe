@@ -1,0 +1,9 @@
+FROM python:3.10
+
+COPY requirements.txt /autotranscribe/requirements.txt
+RUN pip install -r /autotranscribe/requirements.txt
+
+COPY ./bot /autotranscribe/bot
+WORKDIR /autotranscribe
+
+ENTRYPOINT python -m bot

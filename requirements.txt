@@ -1,0 +1,4 @@
+discord.py @ git+https://github.com/Rapptz/discord.py@c6162cfec5534416fe3281fc987bbbf8d9ae281b
+httpx==0.24.0
+faster-whisper==0.4.1
+celery==5.2.7
