@@ -24,6 +24,10 @@ class AutoTranscribe(discord.Client):
         if not voice_msg:
             return
 
+        # If the voice message is longer than 30s, quit
+        if voice_msg[0].duration > 30:
+            return
+
         # Get the file url
         file_url = voice_msg[0].url
 
