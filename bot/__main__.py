@@ -41,7 +41,7 @@ class AutoTranscribe(discord.Client):
 
         # Send the result
         embed = discord.Embed(
-            title="Transcription", description=text, color=Colour.blurple()
+            title="Transcription", description=text[:4000], color=Colour.blurple()
         )
         await message.reply(embed=embed)
 
