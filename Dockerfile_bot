@@ -4,6 +4,7 @@ COPY requirements.txt /autotranscribe/requirements.txt
 RUN pip install -r /autotranscribe/requirements.txt
 
 COPY ./bot /autotranscribe/bot
+COPY ./worker /autotranscribe/worker
 WORKDIR /autotranscribe
 
 ENTRYPOINT python -m bot
