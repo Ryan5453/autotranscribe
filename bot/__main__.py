@@ -11,7 +11,7 @@ class AutoTranscribe(discord.Client):
         # Check if the message is from a bot
         if message.author.bot:
             return
-        
+
         # Check if bot has permissions to send messages
         if not message.channel.permissions_for(message.guild.me).send_messages:
             return
