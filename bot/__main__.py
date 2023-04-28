@@ -52,6 +52,6 @@ class AutoTranscribe(discord.Client):
 
 if __name__ == "__main__":
     client = AutoTranscribe(
-        intents=discord.Intents(messages=True, message_content=True)
+        intents=discord.Intents(messages=True, message_content=True, guilds=True)
     )
     client.run(os.environ["AUTOTRANSCRIBE_DISCORD_TOKEN"])
