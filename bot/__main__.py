@@ -11,6 +11,10 @@ class AutoTranscribe(discord.Client):
         # Check if the message is from a bot
         if message.author.bot:
             return
+        
+        # Check if bot has permissions to send messages
+        if not message.channel.permissions_for(message.guild.me).send_messages:
+            return
 
         # Check if the message contains attachments
         if not message.attachments:
@@ -43,7 +47,7 @@ class AutoTranscribe(discord.Client):
         embed = discord.Embed(
             title="Transcription", description=text[:4000], color=Colour.blurple()
         )
-        await message.reply(embed=embed)
+        await message.reply(embed=embed, mention_author=False)
 
 
 if __name__ == "__main__":
